@@ -1,6 +1,11 @@
 <?php include "inc/header.php"; ?>
 
 <?php
+spl_autoload_register(function($class){
+  include_once "system/libs/".$class.".php";
+
+});
+
 include_once "system/libs/Main.php";
 include_once "system/libs/DController.php";
 include_once "system/libs/DModel.php";

@@ -20,7 +20,11 @@ class CatModel extends DModel{
     return $this->db->select($sql, $data); 
    
   }
-public function insertCat($table, $data);
+public function insertCat($table, $data){
     return  $this->db->insert($table, $data);
+}
+public function catUpdate($table, $data, $cond){
+    $this->db->update($table, $data, $cond);
+}
 }
 ?>

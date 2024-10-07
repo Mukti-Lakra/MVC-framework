@@ -45,7 +45,15 @@ class Index extends DController{
       'title' => $title
        );
    $catModel = $this->load->model("CatModel");
-   $catMode->insertCat($table, $data);
+   $result = $catMode->insertCat($table, $data);
+
+   $mdata = array();
+   if ($result == 1) {
+      $mdata['msg'] = "Category Added Successfully....";
+   } else {
+      $mdata['msg'] = "Category Not Added";
+   }
+   $this->load->view("addcategory", $mdata);
   }
 
 }

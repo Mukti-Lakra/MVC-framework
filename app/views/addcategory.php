@@ -1,6 +1,13 @@
 <div class="content">
   <h3>Add Category</h3> <hr/>
-    <form action="http://localhost/muk/Index/insertCategory" method="post">
+  <?php 
+      if (isset($msg)) {
+        echo "<span style='color:blue;font-weight:bold'>".$msg."</span>";
+      }
+
+      ?>
+
+    <form action="http://localhost/muk/Category/insertCategory" method="post">
       <table>
         <tr>
           <td>Category Name</td>
